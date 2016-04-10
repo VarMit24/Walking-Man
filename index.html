@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+  <meta charset="utf-8">
+  <title>Walking Man</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/external/angular.min.js"></script>
+  <script src="js/controller.js"></script>
+</head>
+<body ng-app="myApp" ng-controller="WalkingController">
+  <section class="container">
+    <textarea class="path" rows="2" cols="10" wrap="hard" readonly="" placeholder="Once upon a time a man went out in search of a tresure, while doing hunt he reached a place called magical forest. Where your destiny gets changed according to the direction or way you choose.......He found the treasure in one go. Can you......?" ng-model="path"></textarea>
+    <input type="text" class="direction-text" placeholder="Right or Left" ng-model="way" ></input>
+    <button type="submit" class="but" ng-click="find()" ng-disabled="dead">Go</button>
+    <ul class="steps-taken">
+      <li ng-repeat="step in steps track by $index">{{step}}</li>
+    </ul>
+  </section>
+</body>
+</html>
